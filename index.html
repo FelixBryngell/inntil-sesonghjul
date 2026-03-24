@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INNTIL Sesonghjul — Marketing-vinduer 2026</title>
+<title>INNTIL Sesonghjul â Marketing-vinduer 2026</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; padding: 24px; color: #1e293b; }
@@ -40,6 +40,8 @@
   .timeline-cells { display: flex; flex: 1; gap: 1px; }
   .cell { flex: 1; height: 28px; border-radius: 2px; display: flex; align-items: center; justify-content: center; position: relative; }
   .cell-empty { background: #f8fafc; }
+
+  /* Intensity-based coloring */
   .cell-low { background: #fef3c7; }
   .cell-med { background: #fcd34d; }
   .cell-high { background: #f59e0b; }
@@ -47,14 +49,18 @@
   .cell-steady { background: #e2e8f0; }
   .cell-secondary-low { background: #fed7aa; }
   .cell-secondary-med { background: #fdba74; }
+
   .cell-first { border-radius: 6px 2px 2px 6px; }
   .cell-last { border-radius: 2px 6px 6px 2px; }
   .cell-only { border-radius: 6px; }
+
   .cell-label { font-size: 7px; font-weight: 700; letter-spacing: .3px; color: rgba(0,0,0,.5); }
+
   .legend { display: flex; gap: 16px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
   .legend-item { display: flex; align-items: center; gap: 5px; }
   .legend-swatch { width: 14px; height: 10px; border-radius: 2px; }
   .legend-label { font-size: 10px; color: #64748b; }
+
   .focus-box { margin-top: 20px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 14px 18px; }
   .focus-title { font-size: 11px; font-weight: 700; color: #92400e; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
   .focus-dot { width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; display: inline-block; }
@@ -62,101 +68,165 @@
   .focus-item:last-child { margin-bottom: 0; }
   .focus-item strong { font-weight: 600; }
   .focus-item .rev { color: #64748b; font-size: 11px; }
+
   .upcoming-box { margin-top: 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 14px 18px; }
   .upcoming-title { font-size: 11px; font-weight: 700; color: #166534; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
   .upcoming-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block; }
+
   .footer { text-align: center; margin-top: 16px; font-size: 9px; color: #cbd5e1; }
-  @media print { body { padding: 0; background: white; } .container { box-shadow: none; padding: 16px; } .product-row:hover .product-note { max-height: 40px; opacity: 1; padding-bottom: 6px; } .filters { display: none; } }
+
+  @media print {
+    body { padding: 0; background: white; }
+    .container { box-shadow: none; padding: 16px; }
+    .product-row:hover .product-note { max-height: 40px; opacity: 1; padding-bottom: 6px; }
+    .filters { display: none; }
+  }
 </style>
 </head>
 <body>
+
 <div class="container">
-  <h1>INNTIL Sesonghjul — Marketing-vinduer 2026</h1>
-  <p class="subtitle">Alle produktgrupper med sesongmønster basert på 52 uker salgsdata fra REMA 1000. Hover for detaljer.</p>
+  <h1>INNTIL Sesonghjul â Marketing-vinduer 2026</h1>
+  <p class="subtitle">Alle produktgrupper med sesongmÃ¸nster basert pÃ¥ 52 uker salgsdata fra REMA 1000. Hover for detaljer.</p>
+
   <div class="filters" id="filters"></div>
   <div class="timeline-table" id="timeline-table"></div>
+
   <div class="legend">
     <div class="legend-item"><div class="legend-swatch" style="background:#fef3c7"></div><span class="legend-label">Oppstart</span></div>
-    <div class="legend-item"><div class="legend-swatch" style="background:#fcd34d"></div><span class="legend-label">Økende</span></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#fcd34d"></div><span class="legend-label">Ãkende</span></div>
     <div class="legend-item"><div class="legend-swatch" style="background:#f59e0b"></div><span class="legend-label">Sterk</span></div>
     <div class="legend-item"><div class="legend-swatch" style="background:#d97706"></div><span class="legend-label">Peak</span></div>
-    <div class="legend-item"><div class="legend-swatch" style="background:#e2e8f0"></div><span class="legend-label">Helår (jevnt)</span></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#e2e8f0"></div><span class="legend-label">HelÃ¥r (jevnt)</span></div>
   </div>
+
   <div class="focus-box">
-    <div class="focus-title"><span class="focus-dot"></span> FOKUS NÅ — MARS/APRIL 2026</div>
-    <div class="focus-item"><strong>Knee Highs, Light/Med</strong> — Vindu åpnet. Peak mai (2.6x). Sterkeste vårmomentum. <span class="rev">kr 1.4M/år</span></div>
-    <div class="focus-item"><strong>Knee Highs, Black</strong> — Dramatisk mai-peak (3.3x). Kortest vindu, høyest intensitet. <span class="rev">kr 1.4M/år</span></div>
-    <div class="focus-item"><strong>Tights 20 Den, Medium &amp; Light</strong> — Både Hold-In og vanlig. Peak mai (2.3–3.0x). 17. mai-oppkjøring. <span class="rev">kr 7.2M/år</span></div>
-    <div class="focus-item"><strong>Socks 3-Pk Black</strong> — Mild vårtopp nå. Basis «stock up». <span class="rev">kr 2.7M/år</span></div>
+    <div class="focus-title"><span class="focus-dot"></span> FOKUS NÃ â MARS/APRIL 2026</div>
+    <div class="focus-item"><strong>Knee Highs, Light/Med</strong> â Vindu Ã¥pnet. Peak mai (2.6x). Sterkeste vÃ¥rmomentum. <span class="rev">kr 1.4M/Ã¥r</span></div>
+    <div class="focus-item"><strong>Knee Highs, Black</strong> â Dramatisk mai-peak (3.3x). Kortest vindu, hÃ¸yest intensitet. <span class="rev">kr 1.4M/Ã¥r</span></div>
+    <div class="focus-item"><strong>Tights 20 Den, Medium & Light</strong> â BÃ¥de Hold-In og vanlig. Peak mai (2.3â3.0x). 17. mai-oppkjÃ¸ring. <span class="rev">kr 7.2M/Ã¥r</span></div>
+    <div class="focus-item"><strong>Socks 3-Pk Black</strong> â Mild vÃ¥rtopp nÃ¥. Basis Â«stock upÂ». <span class="rev">kr 2.7M/Ã¥r</span></div>
   </div>
+
   <div class="upcoming-box">
-    <div class="upcoming-title"><span class="upcoming-dot"></span> FORBERED NÅ — AKTIVER APRIL/MAI</div>
-    <div class="focus-item"><strong>Ankle Socks White</strong> — Start apr, peak jun-jul (2.1–2.3x). Lengste sesong. <span class="rev">kr 2.4M/år</span></div>
-    <div class="focus-item"><strong>Sports Ankle Socks</strong> — Eksplosiv sommer. Peak jun (3.1x). <span class="rev">kr 422k/år</span></div>
-    <div class="focus-item"><strong>Tennis Socks 5-Pk Stripes</strong> — Skarpest vår-peak av tennissokkene (3.9x i mai). <span class="rev">kr 324k/år</span></div>
-    <div class="focus-item"><strong>Tennis Socks 5-Pk</strong> — Sommer-peak jun-aug (2.0–2.3x). <span class="rev">kr 656k/år</span></div>
+    <div class="upcoming-title"><span class="upcoming-dot"></span> FORBERED NÃ â AKTIVER APRIL/MAI</div>
+    <div class="focus-item"><strong>Ankle Socks White</strong> â Start apr, peak jun-jul (2.1â2.3x). Lengste sesong. <span class="rev">kr 2.4M/Ã¥r</span></div>
+    <div class="focus-item"><strong>Sports Ankle Socks</strong> â Eksplosiv sommer. Peak jun (3.1x). <span class="rev">kr 422k/Ã¥r</span></div>
+    <div class="focus-item"><strong>Tennis Socks 5-Pk Stripes</strong> â Skarpest vÃ¥r-peak av tennissokkene (3.9x i mai). <span class="rev">kr 324k/Ã¥r</span></div>
+    <div class="focus-item"><strong>Tennis Socks 5-Pk</strong> â Sommer-peak jun-aug (2.0â2.3x). <span class="rev">kr 656k/Ã¥r</span></div>
   </div>
-  <p class="footer">eco concepts AS &middot; Basert på salgsdata uke 12/2025 – uke 12/2026 &middot; Sist oppdatert mars 2026</p>
+
+  <p class="footer">eco concepts AS &middot; Basert pÃ¥ salgsdata uke 12/2025 â uke 12/2026 &middot; Sist oppdatert mars 2026</p>
 </div>
+
 <script>
 const months = ["Jan","Feb","Mar","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Des"];
 const nowMonth = 2;
+
 const categories = [
-  { id: "strompebukser", name: "Strømpebukser / Tights", color: "#3b82f6", badge: "#dbeafe", text: "#1e40af" },
+  { id: "strompebukser", name: "StrÃ¸mpebukser / Tights", color: "#3b82f6", badge: "#dbeafe", text: "#1e40af" },
   { id: "knee_highs", name: "Knee Highs", color: "#8b5cf6", badge: "#ede9fe", text: "#5b21b6" },
   { id: "sokker", name: "Sokker", color: "#10b981", badge: "#d1fae5", text: "#065f46" },
-  { id: "undertoy", name: "Undertøy", color: "#f43f5e", badge: "#ffe4e6", text: "#9f1239" },
+  { id: "undertoy", name: "UndertÃ¸y", color: "#f43f5e", badge: "#ffe4e6", text: "#9f1239" },
   { id: "ull", name: "Ull / Sesong", color: "#f97316", badge: "#ffedd5", text: "#9a3412" }
 ];
+
 const products = [
-  { name: "Tights 20 Den, Medium & Light", sub: "Inkl. Hold-In. Vår/17. mai + julebord", cat: "strompebukser", rev: "7.2M", data: [0.7, 0.4, 0.8, 0.8, 2.6, 1.4, 0.3, 0.8, 0.7, 0.6, 1.1, 1.9] },
-  { name: "Tights 20 Den, Black", sub: "Inkl. Hold-In. Julebord-dominert", cat: "strompebukser", rev: "6.2M", data: [1.1, 0.5, 0.9, 0.5, 1.2, 0.4, 0.1, 0.4, 0.6, 0.7, 1.9, 3.5] },
-  { name: "Tights 20 Den, Dark", sub: "Inkl. Hold-In. Julebord-dominert", cat: "strompebukser", rev: "1.1M", data: [1.2, 0.6, 0.9, 0.5, 0.8, 0.4, 0.1, 0.5, 0.7, 1.0, 2.1, 3.0] },
-  { name: "Tights 40 Den Hold-In, Black", sub: "Sterkeste julebord-produkt", cat: "strompebukser", rev: "3.9M", data: [1.1, 0.6, 1.0, 0.5, 1.0, 0.4, 0.1, 0.4, 0.7, 0.9, 2.1, 3.3] },
-  { name: "Tights 30 Den, Dots", sub: "U-vare. Ren julebord", cat: "strompebukser", rev: "511k", data: [1.3, 0.7, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 3.6, 6.0] },
-  { name: "Tights 20 Den, Black Glitter", sub: "U-vare. Ren julebord", cat: "strompebukser", rev: "477k", data: [1.5, 0.6, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 3.2, 6.3] },
-  { name: "Tights 20 Den, Black Diamond", sub: "U-vare. Ren julebord", cat: "strompebukser", rev: "451k", data: [1.7, 1.0, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 3.2, 5.7] },
-  { name: "Knee Highs, Black", sub: "Dramatisk mai-peak. 17. mai", cat: "knee_highs", rev: "1.4M", data: [0.7, 0.6, 1.3, 0.8, 3.3, 0.7, 0.2, 0.5, 0.8, 0.9, 0.9, 1.4] },
-  { name: "Knee Highs, Light/Med", sub: "Bredere vår-vindu enn Black", cat: "knee_highs", rev: "1.4M", data: [0.4, 0.4, 1.1, 1.1, 2.6, 1.5, 0.5, 0.9, 0.9, 0.8, 0.9, 0.8] },
-  { name: "Ankle Socks White", sub: "Lengste sesong. Sommer", cat: "sokker", rev: "2.4M", data: [0.3, 0.3, 0.8, 0.9, 1.7, 2.3, 2.1, 1.7, 0.7, 0.5, 0.4, 0.3] },
-  { name: "Ankle Socks Black", sub: "Sommer, lavere volum", cat: "sokker", rev: "217k", data: [0.3, 0.4, 0.8, 0.8, 1.5, 1.9, 1.8, 1.8, 1.0, 0.7, 0.6, 0.5] },
-  { name: "Socks 3-Pk Black", sub: "Helår med mild vårtopp", cat: "sokker", rev: "2.7M", data: [0.6, 0.6, 1.2, 1.0, 1.3, 1.3, 0.8, 1.3, 1.0, 0.9, 1.1, 1.0] },
-  { name: "Sports Ankle Socks", sub: "Eksplosiv sommer", cat: "sokker", rev: "422k", data: [0.1, 0.1, 0.5, 0.6, 2.5, 3.1, 2.7, 1.6, 0.5, 0.3, 0.1, 0.1] },
-  { name: "Tennis Socks 3-Pk", sub: "Motintuitiv: høst/vinter", cat: "sokker", rev: "749k", data: [1.9, 2.1, 2.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 2.8, 2.4] },
-  { name: "Tennis Socks 5-Pk", sub: "Sommer-produkt", cat: "sokker", rev: "656k", data: [0.1, 0.1, 0.2, 0.5, 1.6, 2.2, 2.0, 2.3, 1.2, 0.9, 0.6, 0.2] },
-  { name: "Tennis Socks 5-Pk Stripes", sub: "Skarpest vår-peak", cat: "sokker", rev: "324k", data: [0.1, 0.1, 0.1, 1.7, 3.9, 2.8, 1.2, 0.8, 0.5, 0.3, 0.2, 0.1] },
-  { name: "Thin Wool Socks", sub: "Strukturell vekst +32% YoY", cat: "sokker", rev: "3.0M", data: [1.2, 1.1, 1.0, 0.5, 0.6, 0.6, 0.4, 0.8, 0.8, 1.2, 2.5, 1.3] },
-  { name: "Boxer 2-Pk Black", sub: "Størst volum. Helår", cat: "undertoy", rev: "4.5M", data: [0.7, 0.7, 1.3, 0.7, 0.8, 1.2, 1.2, 1.4, 0.9, 1.2, 1.1, 1.0] },
-  { name: "Boxer 2-Pk Black/White", sub: "Helår, mild sommertopp", cat: "undertoy", rev: "1.0M", data: [0.7, 1.2, 1.0, 0.7, 0.7, 1.3, 1.5, 1.4, 0.8, 1.0, 0.9, 0.8] },
-  { name: "Sports Boxer", sub: "Helår", cat: "undertoy", rev: "688k", data: [0.6, 0.7, 1.2, 0.8, 0.8, 1.2, 1.2, 1.3, 0.9, 1.1, 1.1, 1.0] },
-  { name: "High Waist Brief Black", sub: "Helår", cat: "undertoy", rev: "2.3M", data: [0.8, 0.8, 1.5, 0.8, 0.7, 1.0, 1.0, 1.4, 0.8, 1.2, 0.9, 0.9] },
-  { name: "High Waist Brief White", sub: "Sommer-skjev", cat: "undertoy", rev: "1.0M", data: [0.6, 0.6, 1.3, 0.7, 0.9, 1.4, 1.5, 1.7, 0.8, 1.1, 0.7, 0.6] },
-  { name: "Invisible String", sub: "Helår, mild mars-topp", cat: "undertoy", rev: "1.5M", data: [0.8, 0.8, 1.6, 0.8, 0.8, 1.0, 1.0, 1.2, 0.7, 1.1, 1.0, 1.2] },
-  { name: "Invisible Hipster", sub: "Helår, mild mars/aug-topp", cat: "undertoy", rev: "1.5M", data: [0.8, 0.8, 1.4, 0.7, 0.8, 1.0, 1.0, 1.4, 0.8, 1.2, 1.0, 1.2] },
-  { name: "Wool Tights (inkl. Hold-In)", sub: "Sterk vinter. Null sommer", cat: "ull", rev: "2.5M", data: [1.9, 1.4, 0.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 1.2, 3.5, 3.0] },
-  { name: "Wool Singlet", sub: "Vinter. Nov-peak", cat: "ull", rev: "625k", data: [2.2, 2.2, 0.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 4.1, 2.4] },
-  { name: "Wool Mix Socks", sub: "Nytt produkt, begrenset data", cat: "ull", rev: "64k", data: [0.0, 7.2, 4.7, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] },
+  // STRÃMPEBUKSER
+  { name: "Tights 20 Den, Medium & Light", sub: "Inkl. Hold-In. VÃ¥r/17. mai + julebord", cat: "strompebukser", rev: "7.2M",
+    data: [0.7, 0.4, 0.8, 0.8, 2.6, 1.4, 0.3, 0.8, 0.7, 0.6, 1.1, 1.9] },
+  { name: "Tights 20 Den, Black", sub: "Inkl. Hold-In. Julebord-dominert", cat: "strompebukser", rev: "6.2M",
+    data: [1.1, 0.5, 0.9, 0.5, 1.2, 0.4, 0.1, 0.4, 0.6, 0.7, 1.9, 3.5] },
+  { name: "Tights 20 Den, Dark", sub: "Inkl. Hold-In. Julebord-dominert", cat: "strompebukser", rev: "1.1M",
+    data: [1.2, 0.6, 0.9, 0.5, 0.8, 0.4, 0.1, 0.5, 0.7, 1.0, 2.1, 3.0] },
+  { name: "Tights 40 Den Hold-In, Black", sub: "Sterkeste julebord-produkt", cat: "strompebukser", rev: "3.9M",
+    data: [1.1, 0.6, 1.0, 0.5, 1.0, 0.4, 0.1, 0.4, 0.7, 0.9, 2.1, 3.3] },
+  { name: "Tights 30 Den, Dots", sub: "U-vare. Ren julebord", cat: "strompebukser", rev: "511k",
+    data: [1.3, 0.7, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 3.6, 6.0] },
+  { name: "Tights 20 Den, Black Glitter", sub: "U-vare. Ren julebord", cat: "strompebukser", rev: "477k",
+    data: [1.5, 0.6, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 3.2, 6.3] },
+  { name: "Tights 20 Den, Black Diamond", sub: "U-vare. Ren julebord", cat: "strompebukser", rev: "451k",
+    data: [1.7, 1.0, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 3.2, 5.7] },
+
+  // KNEE HIGHS
+  { name: "Knee Highs, Black", sub: "Dramatisk mai-peak. 17. mai", cat: "knee_highs", rev: "1.4M",
+    data: [0.7, 0.6, 1.3, 0.8, 3.3, 0.7, 0.2, 0.5, 0.8, 0.9, 0.9, 1.4] },
+  { name: "Knee Highs, Light/Med", sub: "Bredere vÃ¥r-vindu enn Black", cat: "knee_highs", rev: "1.4M",
+    data: [0.4, 0.4, 1.1, 1.1, 2.6, 1.5, 0.5, 0.9, 0.9, 0.8, 0.9, 0.8] },
+
+  // SOKKER
+  { name: "Ankle Socks White", sub: "Lengste sesong. Sommer", cat: "sokker", rev: "2.4M",
+    data: [0.3, 0.3, 0.8, 0.9, 1.7, 2.3, 2.1, 1.7, 0.7, 0.5, 0.4, 0.3] },
+  { name: "Ankle Socks Black", sub: "Sommer, lavere volum", cat: "sokker", rev: "217k",
+    data: [0.3, 0.4, 0.8, 0.8, 1.5, 1.9, 1.8, 1.8, 1.0, 0.7, 0.6, 0.5] },
+  { name: "Socks 3-Pk Black", sub: "HelÃ¥r med mild vÃ¥rtopp", cat: "sokker", rev: "2.7M",
+    data: [0.6, 0.6, 1.2, 1.0, 1.3, 1.3, 0.8, 1.3, 1.0, 0.9, 1.1, 1.0] },
+  { name: "Sports Ankle Socks", sub: "Eksplosiv sommer", cat: "sokker", rev: "422k",
+    data: [0.1, 0.1, 0.5, 0.6, 2.5, 3.1, 2.7, 1.6, 0.5, 0.3, 0.1, 0.1] },
+  { name: "Tennis Socks 3-Pk", sub: "Motintuitiv: hÃ¸st/vinter", cat: "sokker", rev: "749k",
+    data: [1.9, 2.1, 2.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 2.8, 2.4] },
+  { name: "Tennis Socks 5-Pk", sub: "Sommer-produkt", cat: "sokker", rev: "656k",
+    data: [0.1, 0.1, 0.2, 0.5, 1.6, 2.2, 2.0, 2.3, 1.2, 0.9, 0.6, 0.2] },
+  { name: "Tennis Socks 5-Pk Stripes", sub: "Skarpest vÃ¥r-peak", cat: "sokker", rev: "324k",
+    data: [0.1, 0.1, 0.1, 1.7, 3.9, 2.8, 1.2, 0.8, 0.5, 0.3, 0.2, 0.1] },
+  { name: "Thin Wool Socks", sub: "Strukturell vekst +32% YoY", cat: "sokker", rev: "3.0M",
+    data: [1.2, 1.1, 1.0, 0.5, 0.6, 0.6, 0.4, 0.8, 0.8, 1.2, 2.5, 1.3] },
+
+  // UNDERTÃY
+  { name: "Boxer 2-Pk Black", sub: "StÃ¸rst volum. HelÃ¥r", cat: "undertoy", rev: "4.5M",
+    data: [0.7, 0.7, 1.3, 0.7, 0.8, 1.2, 1.2, 1.4, 0.9, 1.2, 1.1, 1.0] },
+  { name: "Boxer 2-Pk Black/White", sub: "HelÃ¥r, mild sommertopp", cat: "undertoy", rev: "1.0M",
+    data: [0.7, 1.2, 1.0, 0.7, 0.7, 1.3, 1.5, 1.4, 0.8, 1.0, 0.9, 0.8] },
+  { name: "Sports Boxer", sub: "HelÃ¥r", cat: "undertoy", rev: "688k",
+    data: [0.6, 0.7, 1.2, 0.8, 0.8, 1.2, 1.2, 1.3, 0.9, 1.1, 1.1, 1.0] },
+  { name: "High Waist Brief Black", sub: "HelÃ¥r", cat: "undertoy", rev: "2.3M",
+    data: [0.8, 0.8, 1.5, 0.8, 0.7, 1.0, 1.0, 1.4, 0.8, 1.2, 0.9, 0.9] },
+  { name: "High Waist Brief White", sub: "Sommer-skjev", cat: "undertoy", rev: "1.0M",
+    data: [0.6, 0.6, 1.3, 0.7, 0.9, 1.4, 1.5, 1.7, 0.8, 1.1, 0.7, 0.6] },
+  { name: "Invisible String", sub: "HelÃ¥r, mild mars-topp", cat: "undertoy", rev: "1.5M",
+    data: [0.8, 0.8, 1.6, 0.8, 0.8, 1.0, 1.0, 1.2, 0.7, 1.1, 1.0, 1.2] },
+  { name: "Invisible Hipster", sub: "HelÃ¥r, mild mars/aug-topp", cat: "undertoy", rev: "1.5M",
+    data: [0.8, 0.8, 1.4, 0.7, 0.8, 1.0, 1.0, 1.4, 0.8, 1.2, 1.0, 1.2] },
+
+  // ULL / SESONG
+  { name: "Wool Tights (inkl. Hold-In)", sub: "Sterk vinter. Null sommer", cat: "ull", rev: "2.5M",
+    data: [1.9, 1.4, 0.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 1.2, 3.5, 3.0] },
+  { name: "Wool Singlet", sub: "Vinter. Nov-peak", cat: "ull", rev: "625k",
+    data: [2.2, 2.2, 0.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 4.1, 2.4] },
+  { name: "Wool Mix Socks", sub: "Nytt produkt, begrenset data", cat: "ull", rev: "64k",
+    data: [0.0, 7.2, 4.7, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] },
 ];
+
 const catMap = {};
 categories.forEach(c => catMap[c.id] = c);
+
 let activeFilter = null;
-function init() { buildFilters(); render(); }
+
+function init() {
+  buildFilters();
+  render();
+}
+
 function buildFilters() {
   const el = document.getElementById("filters");
   const allBtn = document.createElement("button");
-  allBtn.className = "filter-btn"; allBtn.id = "filter-all";
+  allBtn.className = "filter-btn";
+  allBtn.id = "filter-all";
   allBtn.textContent = "Alle (" + products.length + ")";
   allBtn.onclick = () => { activeFilter = null; render(); };
   el.appendChild(allBtn);
+
   categories.forEach(cat => {
     const btn = document.createElement("button");
-    btn.className = "filter-btn"; btn.dataset.cat = cat.id;
+    btn.className = "filter-btn";
+    btn.dataset.cat = cat.id;
     const count = products.filter(p => p.cat === cat.id).length;
     btn.textContent = cat.name + " (" + count + ")";
     btn.onclick = () => { activeFilter = activeFilter === cat.id ? null : cat.id; render(); };
     el.appendChild(btn);
   });
 }
+
 function getIntensityClass(val) {
   if (val >= 2.5) return "cell-peak";
   if (val >= 1.5) return "cell-high";
@@ -164,66 +234,150 @@ function getIntensityClass(val) {
   if (val >= 0.6) return "cell-low";
   return null;
 }
+
 function isHelaar(data) {
-  const min = Math.min(...data); const max = Math.max(...data);
+  const min = Math.min(...data);
+  const max = Math.max(...data);
   return (max - min) < 0.9 && max < 1.8;
 }
+
 function buildTimeline(data, isEven) {
-  const wrapper = document.createElement("div"); wrapper.className = "timeline-cells";
+  const wrapper = document.createElement("div");
+  wrapper.className = "timeline-cells";
+  const even = isEven;
+
   data.forEach((val, i) => {
-    const div = document.createElement("div"); div.className = "cell";
-    if (isEven) { div.classList.add("cell-steady"); } else {
+    const div = document.createElement("div");
+    div.className = "cell";
+
+    if (even) {
+      div.classList.add("cell-steady");
+    } else {
       const cls = getIntensityClass(val);
       if (cls) {
         div.classList.add(cls);
+        // Find boundaries for rounding
         const prevActive = i > 0 && getIntensityClass(data[i-1]);
         const nextActive = i < 11 && getIntensityClass(data[i+1]);
         if (!prevActive && !nextActive) div.classList.add("cell-only");
         else if (!prevActive) div.classList.add("cell-first");
         else if (!nextActive) div.classList.add("cell-last");
-        if (val >= 2.5) { const label = document.createElement("span"); label.className = "cell-label"; label.textContent = "PEAK"; div.appendChild(label); }
-      } else { div.classList.add("cell-empty"); }
+
+        if (val >= 2.5) {
+          const label = document.createElement("span");
+          label.className = "cell-label";
+          label.textContent = "PEAK";
+          div.appendChild(label);
+        }
+      } else {
+        div.classList.add("cell-empty");
+      }
     }
     wrapper.appendChild(div);
   });
   return wrapper;
 }
+
 function render() {
+  // Update filter button styles
   document.querySelectorAll(".filter-btn").forEach(btn => {
     const catId = btn.dataset.cat;
-    if (!catId) { btn.style.background = activeFilter === null ? "#1e293b" : "#f1f5f9"; btn.style.color = activeFilter === null ? "white" : "#64748b"; }
-    else { const cat = catMap[catId]; btn.style.background = activeFilter === catId ? cat.color : cat.badge; btn.style.color = activeFilter === catId ? "white" : cat.text; }
+    if (!catId) {
+      btn.style.background = activeFilter === null ? "#1e293b" : "#f1f5f9";
+      btn.style.color = activeFilter === null ? "white" : "#64748b";
+    } else {
+      const cat = catMap[catId];
+      btn.style.background = activeFilter === catId ? cat.color : cat.badge;
+      btn.style.color = activeFilter === catId ? "white" : cat.text;
+    }
   });
-  const table = document.getElementById("timeline-table"); table.innerHTML = "";
-  const header = document.createElement("div"); header.className = "header-row";
-  const hName = document.createElement("div"); hName.className = "header-name"; hName.textContent = "Produkt";
-  const hRev = document.createElement("div"); hRev.className = "header-rev"; hRev.textContent = "Omsetn.";
-  const hMonths = document.createElement("div"); hMonths.className = "month-headers";
-  months.forEach((m, i) => { const div = document.createElement("div"); div.className = "month-header" + (i === nowMonth ? " now" : ""); div.textContent = m; hMonths.appendChild(div); });
-  header.appendChild(hName); header.appendChild(hRev); header.appendChild(hMonths); table.appendChild(header);
+
+  const table = document.getElementById("timeline-table");
+  table.innerHTML = "";
+
+  // Header
+  const header = document.createElement("div");
+  header.className = "header-row";
+  const hName = document.createElement("div");
+  hName.className = "header-name";
+  hName.textContent = "Produkt";
+  const hRev = document.createElement("div");
+  hRev.className = "header-rev";
+  hRev.textContent = "Omsetn.";
+  const hMonths = document.createElement("div");
+  hMonths.className = "month-headers";
+  months.forEach((m, i) => {
+    const div = document.createElement("div");
+    div.className = "month-header" + (i === nowMonth ? " now" : "");
+    div.textContent = m;
+    hMonths.appendChild(div);
+  });
+  header.appendChild(hName);
+  header.appendChild(hRev);
+  header.appendChild(hMonths);
+  table.appendChild(header);
+
+  // Group by category
   const filtered = activeFilter ? products.filter(p => p.cat === activeFilter) : products;
+
   let lastCat = null;
   filtered.forEach(p => {
     const cat = catMap[p.cat];
-    if (p.cat !== lastCat && !activeFilter) { const catHeader = document.createElement("div"); catHeader.className = "cat-header"; const catText = document.createElement("div"); catText.className = "cat-header-text"; catText.style.color = cat.color; catText.textContent = cat.name; catHeader.appendChild(catText); table.appendChild(catHeader); lastCat = p.cat; }
-    const row = document.createElement("div"); row.className = "product-row";
-    const main = document.createElement("div"); main.className = "row-main";
-    const info = document.createElement("div"); info.className = "product-info";
-    const name = document.createElement("div"); name.className = "product-name"; name.textContent = p.name; name.title = p.name;
-    const sub = document.createElement("div"); sub.className = "product-sub"; sub.textContent = p.sub;
-    info.appendChild(name); info.appendChild(sub);
-    const rev = document.createElement("div"); rev.className = "product-rev"; rev.textContent = "kr " + p.rev;
-    main.appendChild(info); main.appendChild(rev); main.appendChild(buildTimeline(p.data, isHelaar(p.data)));
-    const note = document.createElement("div"); note.className = "product-note";
+
+    // Category header
+    if (p.cat !== lastCat && !activeFilter) {
+      const catHeader = document.createElement("div");
+      catHeader.className = "cat-header";
+      const catText = document.createElement("div");
+      catText.className = "cat-header-text";
+      catText.style.color = cat.color;
+      catText.textContent = cat.name;
+      catHeader.appendChild(catText);
+      table.appendChild(catHeader);
+      lastCat = p.cat;
+    }
+
+    const row = document.createElement("div");
+    row.className = "product-row";
+
+    const main = document.createElement("div");
+    main.className = "row-main";
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+    const name = document.createElement("div");
+    name.className = "product-name";
+    name.textContent = p.name;
+    name.title = p.name;
+    const sub = document.createElement("div");
+    sub.className = "product-sub";
+    sub.textContent = p.sub;
+    info.appendChild(name);
+    info.appendChild(sub);
+
+    const rev = document.createElement("div");
+    rev.className = "product-rev";
+    rev.textContent = "kr " + p.rev;
+
+    main.appendChild(info);
+    main.appendChild(rev);
+    main.appendChild(buildTimeline(p.data, isHelaar(p.data)));
+
+    const note = document.createElement("div");
+    note.className = "product-note";
     const peakMonth = p.data.indexOf(Math.max(...p.data));
     const peakVal = Math.max(...p.data).toFixed(1);
     const lowMonth = p.data.indexOf(Math.min(...p.data));
     const lowVal = Math.min(...p.data).toFixed(1);
-    note.textContent = "Peak: " + months[peakMonth] + " (" + peakVal + "x snitt) \u00b7 Lavest: " + months[lowMonth] + " (" + lowVal + "x) \u00b7 Sesongvariasjon: " + (Math.max(...p.data) / Math.max(Math.min(...p.data), 0.05)).toFixed(0) + "x";
-    row.appendChild(main); row.appendChild(note); table.appendChild(row);
+    note.textContent = "Peak: " + months[peakMonth] + " (" + peakVal + "x snitt) Â· Lavest: " + months[lowMonth] + " (" + lowVal + "x) Â· Sesongvariasjon: " + (Math.max(...p.data) / Math.max(Math.min(...p.data), 0.05)).toFixed(0) + "x";
+
+    row.appendChild(main);
+    row.appendChild(note);
+    table.appendChild(row);
   });
 }
+
 init();
-<\/script>
+</script>
 </body>
 </html>
